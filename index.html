@@ -1,25 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ASHBOURNE SYSTEM</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body{
 margin:0;
-font-family:Arial;
 background:#05060a;
+font-family:'Rajdhani', sans-serif;
+overflow:hidden;
 color:white;
-overflow-x:hidden;
 }
 
+/* TRANSITION OVERLAY */
+#transition{
+position:fixed;
+inset:0;
+background:black;
+opacity:0;
+pointer-events:none;
+transition:0.9s ease;
+z-index:999;
+}
+
+#transition.active{
+opacity:1;
+}
+
+/* TITLE */
 h1{
 text-align:center;
 margin-top:40px;
-font-size:3rem;
-letter-spacing:10px;
+font-family:'Orbitron', sans-serif;
+letter-spacing:12px;
 color:#b08cff;
+text-shadow:0 0 25px rgba(176,140,255,0.4);
 }
 
 p{
@@ -27,78 +46,93 @@ text-align:center;
 color:#888;
 }
 
-.grid{
+/* MENU */
+.menu{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 padding:40px;
 }
 
 .card{
-position:relative;
-overflow:hidden;
+background:#0b0e14;
 border:1px solid rgba(255,255,255,0.08);
+cursor:pointer;
+overflow:hidden;
 transition:0.3s;
-background:#0a0c14;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:scale(1.06);
+box-shadow:0 0 40px rgba(120,170,255,0.3);
 }
 
 .card img{
 width:100%;
 height:280px;
 object-fit:cover;
-filter:contrast(1.1) saturate(1.1);
+transition:0.5s;
+}
+
+.card:hover img{
+transform:scale(1.1);
 }
 
 .card h2{
 text-align:center;
-padding:10px;
-letter-spacing:4px;
+font-family:'Orbitron', sans-serif;
+letter-spacing:5px;
 }
 
-a{color:white;text-decoration:none;}
+/* glow per character */
+.kae:hover{box-shadow:0 0 40px rgba(255,77,109,0.4);}
+.nox:hover{box-shadow:0 0 40px rgba(77,163,255,0.4);}
+.haz:hover{box-shadow:0 0 40px rgba(255,184,77,0.4);}
+.tre:hover{box-shadow:0 0 40px rgba(77,255,184,0.4);}
 </style>
 </head>
 
 <body>
 
-<h1>ASHBOURNE</h1>
-<p>SUBJECT DATABASE ACCESS SYSTEM</p>
+<div id="transition"></div>
 
-<div class="grid">
+<h1>ASHBOURNE SYSTEM</h1>
+<p>SELECT SUBJECT FILE</p>
 
-<a href="kaethryn.html">
-<div class="card">
+<div class="menu">
+
+<div class="card kae" onclick="go('kaethryn.html')">
 <img src="kaethryn.png">
 <h2>KAETHRYN</h2>
 </div>
-</a>
 
-<a href="nox.html">
-<div class="card">
+<div class="card nox" onclick="go('nox.html')">
 <img src="nox.png">
 <h2>NOX</h2>
 </div>
-</a>
 
-<a href="hazel.html">
-<div class="card">
+<div class="card haz" onclick="go('hazel.html')">
 <img src="hazel.png">
 <h2>HAZEL</h2>
 </div>
-</a>
 
-<a href="trey.html">
-<div class="card">
+<div class="card tre" onclick="go('trey.html')">
 <img src="trey.png">
 <h2>TREY</h2>
 </div>
-</a>
 
 </div>
+
+<script>
+function go(page){
+const t=document.getElementById("transition");
+t.classList.add("active");
+
+setTimeout(()=>{
+window.location.href=page;
+},900);
+}
+</script>
 
 </body>
 </html>
