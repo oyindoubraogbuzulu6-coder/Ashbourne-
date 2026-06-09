@@ -12,24 +12,8 @@ body{
 margin:0;
 background:#05060a;
 font-family:'Rajdhani', sans-serif;
-overflow-y:auto;
+color:white;
 overflow-x:hidden;
-min-height:100vh;
-  }
-
-/* TRANSITION OVERLAY */
-#transition{
-position:fixed;
-inset:0;
-background:black;
-opacity:0;
-pointer-events:none;
-transition:0.9s ease;
-z-index:999;
-}
-
-#transition.active{
-opacity:1;
 }
 
 /* TITLE */
@@ -44,10 +28,10 @@ text-shadow:0 0 25px rgba(176,140,255,0.4);
 
 p{
 text-align:center;
-color:#888;
+color:#aaa;
 }
 
-/* MENU */
+/* MENU GRID */
 .menu{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -55,17 +39,19 @@ gap:20px;
 padding:40px;
 }
 
+/* CARD */
 .card{
 background:#0b0e14;
 border:1px solid rgba(255,255,255,0.08);
 cursor:pointer;
 overflow:hidden;
 transition:0.3s;
+border-radius:10px;
 }
 
 .card:hover{
-transform:scale(1.06);
-box-shadow:0 0 40px rgba(120,170,255,0.3);
+transform:scale(1.05);
+box-shadow:0 0 40px rgba(120,170,255,0.25);
 }
 
 .card img{
@@ -79,6 +65,7 @@ transition:0.5s;
 transform:scale(1.1);
 }
 
+/* 🔥 FIXED FONT COLOR */
 .card h2{
 text-align:center;
 font-family:'Orbitron', sans-serif;
@@ -97,45 +84,31 @@ margin:10px 0;
 
 <body>
 
-<div id="transition"></div>
-
 <h1>ASHBOURNE SYSTEM</h1>
 <p>SELECT SUBJECT FILE</p>
 
 <div class="menu">
 
-<div class="card kae" onclick="go('kaethryn.html')">
+<a href="kaethryn.html">
+<div class="card kae">
 <img src="kaethryn.png">
 <h2>KAETHRYN</h2>
 </div>
+</a>
 
-<div class="card nox" onclick="go('nox.html')">
+<a href="nox.html">
+<div class="card nox">
 <img src="nox.png">
 <h2>NOX</h2>
 </div>
+</a>
 
-<div class="card haz" onclick="go('hazel.html')">
+<a href="hazel.html">
+<div class="card haz">
 <img src="hazel.png">
 <h2>HAZEL</h2>
 </div>
+</a>
 
-<div class="card tre" onclick="go('trey.html')">
-<img src="trey.png">
-<h2>TREY</h2>
-</div>
-
-</div>
-
-<script>
-function go(page){
-const t=document.getElementById("transition");
-t.classList.add("active");
-
-setTimeout(()=>{
-window.location.href=page;
-},900);
-}
-</script>
-
-</body>
-</html>
+<a href="trey.html">
+<div class="
