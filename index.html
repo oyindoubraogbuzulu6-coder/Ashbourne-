@@ -16,17 +16,15 @@ overflow-x:hidden;
 
 h1{
 text-align:center;
-margin-top:50px;
+margin-top:40px;
 font-size:3rem;
-letter-spacing:8px;
+letter-spacing:10px;
 color:#b08cff;
 }
 
 p{
 text-align:center;
-color:#aaa;
-max-width:700px;
-margin:10px auto;
+color:#888;
 }
 
 .grid{
@@ -37,36 +35,68 @@ padding:40px;
 }
 
 .card{
-padding:20px;
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.1);
-text-align:center;
+position:relative;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
 transition:0.3s;
+background:#0a0c14;
 }
 
 .card:hover{
 transform:scale(1.05);
-border-color:#7aa2ff;
 }
 
-a{
-text-decoration:none;
-color:white;
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+filter:contrast(1.1) saturate(1.1);
 }
+
+.card h2{
+text-align:center;
+padding:10px;
+letter-spacing:4px;
+}
+
+a{color:white;text-decoration:none;}
 </style>
 </head>
 
 <body>
 
 <h1>ASHBOURNE</h1>
-<p>Cinematic emotional subject system. Select a file to view subject data.</p>
+<p>SUBJECT DATABASE ACCESS SYSTEM</p>
 
 <div class="grid">
 
-<a href="kaethryn.html"><div class="card">KAETHRYN</div></a>
-<a href="nox.html"><div class="card">NOX</div></a>
-<a href="hazel.html"><div class="card">HAZEL</div></a>
-<a href="trey.html"><div class="card">TREY</div></a>
+<a href="kaethryn.html">
+<div class="card">
+<img src="kaethryn.png">
+<h2>KAETHRYN</h2>
+</div>
+</a>
+
+<a href="nox.html">
+<div class="card">
+<img src="nox.png">
+<h2>NOX</h2>
+</div>
+</a>
+
+<a href="hazel.html">
+<div class="card">
+<img src="hazel.png">
+<h2>HAZEL</h2>
+</div>
+</a>
+
+<a href="trey.html">
+<div class="card">
+<img src="trey.png">
+<h2>TREY</h2>
+</div>
+</a>
 
 </div>
 
