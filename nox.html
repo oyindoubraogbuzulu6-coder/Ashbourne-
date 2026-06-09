@@ -5,35 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NOX FILE</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body{margin:0;background:#05060a;color:white;font-family:Arial}
-.hero img{width:100%;height:70vh;object-fit:cover;filter:contrast(1.2)}
-.overlay{padding:30px;border-top:2px solid #4da3ff}
-h1{color:#4da3ff;letter-spacing:8px;margin:0}
-.tag{color:#4da3ff;opacity:0.8}
-.text{margin-top:15px;color:#aaa;max-width:700px;line-height:1.5}
-.back{margin-top:20px;display:inline-block;color:#7aa2ff}
+body{margin:0;background:#05060a;overflow:hidden;color:white;font-family:'Rajdhani',sans-serif}
+
+#fade{position:fixed;inset:0;background:black;opacity:1;animation:fadeIn 1s forwards;z-index:999}
+@keyframes fadeIn{to{opacity:0;visibility:hidden;}}
+
+.bg{
+position:absolute;inset:0;
+background:url('nox.png') center/cover no-repeat;
+filter:brightness(0.7) contrast(1.1);
+transform:scale(1.05);
+animation:zoom 10s infinite alternate;
+}
+@keyframes zoom{from{transform:scale(1.05);}to{transform:scale(1.1);}}
+
+.hud{
+position:absolute;bottom:0;left:0;right:0;
+padding:25px;
+background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+}
+
+h1{font-family:'Orbitron';color:#4da3ff;letter-spacing:10px;margin:0}
+
+.tag{opacity:0.7;letter-spacing:3px}
+
+.info{margin-top:10px;line-height:1.5;opacity:0.85}
+
+.back{display:inline-block;margin-top:10px;color:#7aa2ff}
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-<img src="nox.png">
-</div>
+<div id="fade"></div>
 
-<div class="overlay">
+<div class="bg"></div>
 
+<div class="hud">
 <h1>NOX</h1>
-<p class="tag">SUBJECT N-02 — EMOTION ABSORPTION CLASS</p>
+<div class="tag">SUBJECT N-02 — EMOTION ABSORPTION CLASS</div>
 
-<div class="text">
-Absorbs emotional pain and trauma from surrounding individuals.
-Prolonged exposure leads to identity erosion.
+<div class="info">
+Absorbs emotional trauma from surrounding subjects.
+Prolonged exposure leads to identity fragmentation.
 </div>
 
-<a class="back" href="index.html">← back</a>
-
+<a class="back" href="index.html">← return</a>
 </div>
 
 </body>
